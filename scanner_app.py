@@ -16,6 +16,7 @@ ctk.set_default_color_theme("dark-blue")
 class ScannerApp(ctk.CTk):
     def __init__(self):
         super().__init__()
+        self.iconbitmap("capa.png")
         self.title("Host Discovery")
         self.geometry("900x600")
         self.scanning = False
@@ -23,7 +24,7 @@ class ScannerApp(ctk.CTk):
 
         self._setup_ui()
         self.update_machine_info_label()
-
+    
     def _setup_ui(self):
         """Initialize the UI components."""
         self.button_auto_host_discovery = ctk.CTkButton(self, text="Auto Host Discovery", command=self.start_auto_host_discovery)
